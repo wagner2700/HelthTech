@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Globalization;
+
 
 namespace HelthMind2.Model
 {
@@ -22,19 +22,18 @@ namespace HelthMind2.Model
             [Column("ESPECIALIDADE")]
             public string Especialidade { get; set; }
 
-            [Column("DATANASCIMENTO")]
-            public Calendar DataNacimento { get; set; }
+            //[Column("DATANASCIMENTO")]
+            //public Calendar DataNacimento { get; set; }
 
             [Column("CRM")]
             public string CRMMedico { get; set; }
 
-        public MedicoModel(int medicoId, string nomeMedico, string cpf, string especialidade, Calendar dataNacimento, string cRMMedico)
+        public MedicoModel(int medicoId, string nomeMedico, string cpf, string especialidade, string cRMMedico)
         {
             MedicoId = medicoId;
             NomeMedico = nomeMedico;
             Cpf = cpf;
             Especialidade = especialidade;
-            DataNacimento = dataNacimento;
             CRMMedico = cRMMedico;
         }
 

@@ -28,9 +28,15 @@ namespace HelthMind2.Repository
             return medico;
         }
 
+        public void Inserir(MedicoModel medico)
+        {
+            dataBaseContext.medico.Add(medico);
+            dataBaseContext.SaveChanges();
+        }
+
         public void Excluir(int id)
         {
-        var medico = new MedicoModel( id ,"","","",null,"");
+        var medico = new MedicoModel( id ,"","","","");
         }
     }
 }

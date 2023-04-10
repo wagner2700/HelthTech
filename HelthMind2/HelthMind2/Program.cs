@@ -1,11 +1,10 @@
 using HelthMind2.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DataBaseConnection");
+var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
 builder.Services.AddDbContext<DataBaseContext>(options => options.UseOracle(connectionString).EnableSensitiveDataLogging(true));
 
 builder.Services.AddControllers();
@@ -25,5 +24,9 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+//app.MapControllerRoute(
+ //   name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
